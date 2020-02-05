@@ -33,7 +33,7 @@ const linksCorect = (route) => {
 }
 
 
-(linksCorect('../LIM011-fe-md-links/src/prueba')).then( res=> console.log(res));
+//(linksCorect('../LIM011-fe-md-links/src/prueba')).then( res=> console.log(res));
 //linksCorect('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/red.md').then(links => {
     // => [{ href, text, file }]
   // console.log(links);
