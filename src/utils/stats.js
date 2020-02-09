@@ -1,37 +1,46 @@
 
-const prueba = [{ href: 'https://es.wikipedia.org/wiki/Markdown',
-text: 'Markdown',
-path:
+const prueba = [{
+  href: 'https://es.wikipedia.org/wiki/Markdown',
+  text: 'Markdown',
+  path:
  '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/Example/probando.md',
-status: 200,
-textStatus: 'OK' },
-{ href: 'https://nodejs.org/',
-text: 'Node.js',
-path:
+  status: 200,
+  textStatus: 'OK',
+},
+{
+  href: 'https://nodejs.org/',
+  text: 'Node.js',
+  path:
  '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/Example/probando.md',
-status: 200,
-textStatus: 'OK' },
-{ href: 'https://nodejs.org/',
-text: 'Node.js',
-path:
+  status: 200,
+  textStatus: 'OK',
+},
+{
+  href: 'https://nodejs.org/',
+  text: 'Node.js',
+  path:
  '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/Example/probando.md',
-status: 200,
-textStatus: 'OK' },
- ]
+  status: 200,
+  textStatus: 'OK',
+},
+];
 
-const statsOutput = (array) =>{
-//console.log(array);
-const total =array.length;
-const unique = [... new Set(array.map((link) => link.href))].length;
-const broken = (array.filter((link) => link.status === '' || link.textStatus === 'Fail')).length;
- console.log(unique);
 
-const obj = {
-     Total: total,
-    Unique: unique,
-    Broken: broken,
-}
-return obj;
+const statsTotal = (array) => array.length;
 
-}
-console.log(statsOutput(prueba));
+// console.log(statsTotal(prueba));
+
+const statsUnique = (array) => [...new Set(array.map((link) => link.href))].length;
+
+// console.log(statsUnique(prueba));
+
+const statsBroken = (array) => array.filter((link) => link.status === '' || link.textStatus === 'Fail').length;
+console.log(statsBroken(prueba));
+
+
+module.exports = {
+  statsTotal,
+  statsUnique,
+  statsBroken,
+
+};

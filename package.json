@@ -1,11 +1,14 @@
 {
   "name": "lim011-fe-md-links",
   "version": "1.0.0",
-  "description": "## Preámbulo",
+  "description": "libreria para archivos Markdown",
   "main": "index.js",
   "scripts": {
-    "eslint": "jest --coverag",
+    "eslint": "jest --coverage",
     "test": "jest"
+  },
+  "bin": {
+    "md-link": "src/cli.js"
   },
   "repository": {
     "type": "git",
