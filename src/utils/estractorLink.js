@@ -17,7 +17,7 @@ const markdownLinkExtractor = (markdown) => {
   // console.log(markdown);
   const links = [];
   const renderer = new Marked.Renderer();
-  console.log(arrayAllgetPAthArray);
+  // console.log(arrayAllgetPAthArray);
   arrayAllgetPAthArray.forEach((elementMd) => {
     const markdowns = fs.readFileSync(elementMd).toString();
     // console.log(markdowns);
@@ -36,14 +36,15 @@ const markdownLinkExtractor = (markdown) => {
 };
 
 // eslint-disable-next-line max-len
-// const links = markdownLinkExtractor('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba');
+// const links = markdownLinkExtractor('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/red.md');
 // console.log(links);
 
 
 module.exports = {
 
   markdownLinkExtractor,
+  getPathArray,
 };
 
 
-// console.log(getPathArray('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba'));
+// console.log(getPathArray('../LIM011-fe-md-links/src/prueba'));

@@ -7,6 +7,7 @@ const array = ['/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/cli.js',
   '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/md-link.js',
   '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/Example/idex.html',
   '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/Example/probando.md',
+  '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/first.md',
   '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/prueba.js',
   '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/red.md',
   '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/utils/estractorLink.js',
@@ -14,6 +15,7 @@ const array = ['/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/cli.js',
   '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/utils/stats.js',
   '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/utils/validate.js'];
 const arrayOutput = ['/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/Example/probando.md',
+  '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/first.md',
   '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/red.md'];
 
 describe('evalua la ruta', () => {
@@ -39,7 +41,7 @@ describe('lee contenido del directorio- recursiva ', () => {
     expect(route.readDirectoryRecursive(path.join(process.cwd(), 'src'))).toEqual(array);
   });
 });
-describe('Is the extension of file .MD?', () => {
+describe('es una extension .MD?', () => {
   it('Debería retornar function', () => {
     expect(typeof route.evaluateFileIsMd).toBe('function');
   });
@@ -50,7 +52,8 @@ describe('Is the extension of file .MD?', () => {
     expect(route.evaluateFileIsMd(path.join(process.cwd(), 'README.md'))).toBe(true);
   });
 });
-describe('Is the extension of file .MD?', () => {
+
+describe('se obtiene todas las extensiones md en un array?', () => {
   it('Debería retornar function', () => {
     expect(typeof route.evaluateFilesMd).toBe('function');
   });
