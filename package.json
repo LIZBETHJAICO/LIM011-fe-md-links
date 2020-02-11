@@ -4,8 +4,8 @@
   "description": "libreria para archivos Markdown",
   "main": "index.js",
   "scripts": {
-    "eslint": "jest --coverage",
-    "test": "jest"
+    "eslint": "eslint --ext .js src/ testing/ ",
+    "test": "jest --coverage"
   },
   "bin": {
     "md-link": "src/cli.js"

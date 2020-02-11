@@ -1,7 +1,7 @@
 const routeStart = require('../src/utils/route.js');
 const estractorLink = require('../src/utils/estractorLink.js');
 const validar = require('../src/utils/validate.js');
-
+// uno de ellos es array y el otro es una promesa y hago que ambos me retornen en promesa
 const mdLinks = (path, options) => new Promise((resolve) => {
   const routeAbs = routeStart.convertPathRelativeToAbsolute(path);
   // console.log(routeAbs);

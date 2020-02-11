@@ -1,4 +1,5 @@
 
+/*
 const prueba = [{
   href: 'https://es.wikipedia.org/wiki/Markdown',
   text: 'Markdown',
@@ -24,7 +25,7 @@ const prueba = [{
   textStatus: 'OK',
 },
 ];
-
+*/
 
 const statsTotal = (array) => array.length;
 
@@ -35,12 +36,11 @@ const statsUnique = (array) => [...new Set(array.map((link) => link.href))].leng
 // console.log(statsUnique(prueba));
 
 const statsBroken = (array) => array.filter((link) => link.status === '' || link.textStatus === 'Fail').length;
-console.log(statsBroken(prueba));
+// console.log(statsBroken(prueba));
 
 
 module.exports = {
   statsTotal,
   statsUnique,
   statsBroken,
-
 };
