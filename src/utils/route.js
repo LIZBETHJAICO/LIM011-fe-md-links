@@ -1,31 +1,25 @@
 const path = require('path');
 const fs = require('fs');
 // OBTENER SI ES ABSOLUTA
-const evaluatePath = (route) => {
-  // método determina si pathes una ruta absoluta.
-  const issAbsolute = path.isAbsolute(route);
-  return issAbsolute;
-};
+const evaluatePath = (route) => path.isAbsolute(route);
 // CONVERTIR RUTA ABSOLUTA
 const convertPathRelativeToAbsolute = (route) => path.resolve(route);
-
-
 // LEE  CONTENIDO DEL DIRECTORIO
 const readDirectoryRecursive = (ruta) => {
   let filePathsArray = [];
   // console.log(absoluteFilePath)
+  // isDirectory para ver si es un directorio true o false
   if (fs.statSync(ruta).isDirectory()) {
     const getNameDirectoryArray = fs.readdirSync(ruta);
-    // console.log(getNameDirectoryArray);
+    // un array en string
     getNameDirectoryArray.forEach((elem) => {
       const absoluteFilePath = path.join(ruta, elem);
       filePathsArray = filePathsArray.concat(readDirectoryRecursive(absoluteFilePath));
     });
   } else {
+    // console.log(filePathsArray.push(ruta));
     filePathsArray.push(ruta);
   }
-
-
   return filePathsArray;
 };
 

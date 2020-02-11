@@ -1,16 +1,18 @@
+const path = require('path');
 const fs = require('fs');
 const Marked = require('marked');
 const route = require('../utils/route.js');
 
-const getPathArray = (path) => {
+const getPathArray = (pathInput) => {
   let pathAbsolute;
-  const routeMdLink = route.evaluatePath(path);
+  const routeMdLink = path.isAbsolute(pathInput);
   if (routeMdLink === false) {
-    pathAbsolute = route.convertPathRelativeToAbsolute(path);
-  } else { pathAbsolute = path; }
+    pathAbsolute = route.convertPathRelativeToAbsolute(pathInput);
+  } else { pathAbsolute = pathInput; }
   const arrMds = route.evaluateFilesMd(route.readDirectoryRecursive(pathAbsolute));
   return arrMds;
 };
+console.log(getPathArray('../LIM011-fe-md-links/src/prueba/red.md'));
 
 const markdownLinkExtractor = (markdown) => {
   const arrayAllgetPAthArray = getPathArray(markdown);
