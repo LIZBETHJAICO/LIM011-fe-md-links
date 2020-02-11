@@ -11,7 +11,7 @@ const fsMdlinks = (path, options) => {
       .then((res) => {
         let stringElem = '';
         res.forEach((elem) => {
-          stringElem += `${elem.path} ${elem.href} ${elem.text}\n`;
+          stringElem += `${elem.path} ${elem.href} ES UN  ${elem.text}\n`;
         });
         return stringElem;
       });
