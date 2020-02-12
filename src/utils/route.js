@@ -5,44 +5,33 @@ const evaluatePath = (route) => path.isAbsolute(route);
 // CONVERTIR RUTA ABSOLUTA
 const convertPathRelativeToAbsolute = (route) => path.resolve(route);
 // LEE  CONTENIDO DEL DIRECTORIO
-const readDirectoryRecursive = (ruta) => {
+const readDirectoryRecursive = (route) => {
   let filePathsArray = [];
   // console.log(absoluteFilePath)
   // isDirectory para ver si es un directorio true o false
-  if (fs.statSync(ruta).isDirectory()) {
-    const getNameDirectoryArray = fs.readdirSync(ruta);
+  if (fs.statSync(route).isDirectory()) {
+    const getNameDirectoryArray = fs.readdirSync(route);
     // un array en string
     getNameDirectoryArray.forEach((elem) => {
-      const absoluteFilePath = path.join(ruta, elem);
+      const absoluteFilePath = path.join(route, elem);
       filePathsArray = filePathsArray.concat(readDirectoryRecursive(absoluteFilePath));
     });
   } else {
     // console.log(filePathsArray.push(ruta));
-    filePathsArray.push(ruta);
+    filePathsArray.push(route);
   }
   return filePathsArray;
 };
 
-// EVALUA LA RUTA SI ES MD.
-
-const evaluateFileIsMd = (route) => {
-  const ismd = path.extname(route) === '.md';
-  // console.log(path.extname(route), ismd);
-  return ismd;
-};
 // EVALUA EL ARRAY MD
-const evaluateFilesMd = (array) => {
-  const mdFilePathsArray = array.filter((elem) => path.extname(elem) === '.md');
-  return mdFilePathsArray;
-};
-// EXTRAER LINK DEL  DEL MD
+const evaluateFilesMd = (array) => array.filter((elem) => path.extname(elem) === '.md');
 
+// EXTRAER LINK DEL  DEL MD
 
 module.exports = {
   evaluatePath,
   convertPathRelativeToAbsolute,
   readDirectoryRecursive,
-  evaluateFileIsMd,
   evaluateFilesMd,
 };
 // eslint-disable-next-line max-len

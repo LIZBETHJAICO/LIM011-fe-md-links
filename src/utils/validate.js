@@ -3,6 +3,7 @@
 const fetch = require('node-fetch');
 const rutas = require('../utils/estractorLink');
 
+
 const linksCorect = (route) => {
   const hrefMd = rutas.markdownLinkExtractor(route);
   const arrayPromises = hrefMd.map((link) => fetch(link.href)
@@ -24,7 +25,7 @@ const linksCorect = (route) => {
   return Promise.all(arrayPromises);
 };
 
-// (linksCorect('../LIM011-fe-md-links/src/prueba/red.md')).then((res) => console.log(res));
+// (linksCorect('../LIM011-fe-md-links/README.md')).then((res) => console.log(res));
 // eslint-disable-next-line max-len
 /* linksCorect('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/red.md').then(links => {
  => [{ href, text, file }]

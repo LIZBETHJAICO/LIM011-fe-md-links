@@ -1,15 +1,41 @@
+const Marked = require('marked');
 const path = require('path');
 const fs = require('fs');
-const Marked = require('marked');
-const route = require('../utils/route.js');
+
+// const convertPathRelativeToAbsolute = (route) => path.resolve(route);
+// LEE  CONTENIDO DEL DIRECTORIO
+const readDirectoryRecursive = (route) => {
+  let filePathsArray = [];
+  // console.log(absoluteFilePath)
+  // isDirectory para ver si es un directorio true o false
+  if (fs.statSync(route).isDirectory()) {
+    const getNameDirectoryArray = fs.readdirSync(route);
+    // un array en string
+    getNameDirectoryArray.forEach((elem) => {
+      const absoluteFilePath = path.join(route, elem);
+      filePathsArray = filePathsArray.concat(readDirectoryRecursive(absoluteFilePath));
+    });
+  } else {
+    // console.log(filePathsArray.push(ruta));
+    filePathsArray.push(route);
+  }
+  return filePathsArray;
+};
+
+// EVALUA EL ARRAY MD
+const evaluateFilesMd = (array) => array.filter((elem) => path.extname(elem) === '.md');
 
 const getPathArray = (pathInput) => {
   let pathAbsolute;
+  // es absoluta?
   const routeMdLink = path.isAbsolute(pathInput);
-  if (routeMdLink === false) {
-    pathAbsolute = route.convertPathRelativeToAbsolute(pathInput);
+  // relativa: convertir a absoluta
+  const convertPathRelativeToAbsolute = path.resolve(pathInput);
+
+  if (!routeMdLink) {
+    pathAbsolute = convertPathRelativeToAbsolute;
   } else { pathAbsolute = pathInput; }
-  const arrMds = route.evaluateFilesMd(route.readDirectoryRecursive(pathAbsolute));
+  const arrMds = evaluateFilesMd(readDirectoryRecursive(pathAbsolute));
   return arrMds;
 };
 console.log(getPathArray('../LIM011-fe-md-links/src/prueba/red.md'));
@@ -47,6 +73,3 @@ module.exports = {
   markdownLinkExtractor,
   getPathArray,
 };
-
-
-// console.log(getPathArray('../LIM011-fe-md-links/src/prueba'));

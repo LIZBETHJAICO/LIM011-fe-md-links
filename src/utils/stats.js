@@ -1,5 +1,5 @@
+/* eslint-disable max-len */
 
-/*
 const prueba = [{
   href: 'https://es.wikipedia.org/wiki/Markdown',
   text: 'Markdown',
@@ -25,22 +25,39 @@ const prueba = [{
   textStatus: 'OK',
 },
 ];
-*/
 
 const statsTotal = (array) => array.length;
 
-// console.log(statsTotal(prueba));
-
 const statsUnique = (array) => [...new Set(array.map((link) => link.href))].length;
+const statsBroken = (array) => array.filter((link) => link.status === '' || link.textStatus === 'Fail').length;
+
+
+const printStats = (array) => {
+  const total = (`Total: ${statsTotal(array)} \n Unique: ${statsUnique(array)} \n Broken: ${statsBroken(array)}`);
+  return total;
+};
+
+const printStatsValidate = (array) => {
+  const total = (`Total: ${statsTotal(array)} \n Unique: ${statsUnique(array)} \n `);
+  return total;
+};
+// console.log(printStats(prueba));
+// console.log(printStatsValidate(prueba));
+
+
+// const statsTotal = (array) => array.length;
+
+(statsTotal(prueba));
+
+// const statsUnique = (array) => [...new Set(array.map((link) => link.href))].length;
 
 // console.log(statsUnique(prueba));
-
-const statsBroken = (array) => array.filter((link) => link.status === '' || link.textStatus === 'Fail').length;
+// Cuantos link caidos
+// const statsBroken = (array) => array.filter((link) => link.status === '' || link.textStatus === 'Fail').length;
 // console.log(statsBroken(prueba));
 
 
 module.exports = {
-  statsTotal,
-  statsUnique,
-  statsBroken,
+  printStats,
+  printStatsValidate,
 };
