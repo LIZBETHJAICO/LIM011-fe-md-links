@@ -2,7 +2,7 @@
 const mds = require('../src/cliCondition.js');
 
 const path = process.argv[2];
-console.log();
+// console.log();
 
 const options = {
   validate: process.argv[3],

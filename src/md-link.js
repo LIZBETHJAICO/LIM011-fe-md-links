@@ -52,7 +52,13 @@ const printValidateFalse = (array) => {
   array.forEach((elem) => { stringres += `${elem.path} ${elem.href} ES UN  ${elem.text}\n`; });
   return stringres;
 };
-const printValidateTrue = (array) => array.map((elem) => `${elem.path} ${elem.href} ${elem.text} ${elem.status} ${elem.statusText}\n`);
+const printValidateTrue = (array) => {
+  let stringres = '';
+  array.forEach((elem) => {
+    stringres += `${elem.path} ${elem.href} ${elem.text} ${elem.status} ${elem.statusText}\n`;
+  });
+  return stringres;
+};
 
 // console.log(ValidateFalse(prueba));
 // console.log(prueba[0]);

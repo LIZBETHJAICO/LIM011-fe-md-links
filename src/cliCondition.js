@@ -9,12 +9,12 @@ const fsMdlinks = (path, options) => {
   } else if (options.validate === undefined) {
     resultado = mdlink.mdLinks(path, { validate: false })
       .then((res) => mdlink.printValidateFalse(res));
-  } else if ((options.validate === '--validate') || (options.validate === '--v')) {
-    resultado = mdlink.mdLinks(path, { validate: true })
-      .then((res) => mdlink.printValidateTrue(res));
   } else if ((options.validate === '--validate' && options.stats === '--stats') || (options.validate === '--v' && options.stats === '--s')) {
     resultado = mdlink.mdLinks(path, { validate: true })
       .then((res) => stats.printStatsValidate(res));
+  } else if ((options.validate === '--validate') || (options.validate === '--v')) {
+    resultado = mdlink.mdLinks(path, { validate: true })
+      .then((res) => mdlink.printValidateTrue(res));
   } else if (options.validate === '--stats' || (options.validate === '--s')) {
     resultado = mdlink.mdLinks(path, { validate: true }).then((res) => stats.printStats(res));
   }
