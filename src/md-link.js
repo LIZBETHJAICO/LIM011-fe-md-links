@@ -8,11 +8,11 @@ const mdLinks = (path, options) => new Promise((resolve) => {
   if (options.validate === true) {
     resolve(validar.linksCorect(path));
     // console.log(validar.linksCorect(routeAbs));
-  } else if (!options.validate) {
-    resolve(estractorLink.markdownLinkExtractor(path));
-    // console.log(rutas.markdownLinkExtractor(routeAbs))
   }
+  return resolve(estractorLink.markdownLinkExtractor(path));
+  // console.log(rutas.markdownLinkExtractor(routeAbs))
 });
+
 
 // const print
 // (mdLinks('../LIM011-fe-md-links/src/prueba', true)).then((res) => console.log(res));

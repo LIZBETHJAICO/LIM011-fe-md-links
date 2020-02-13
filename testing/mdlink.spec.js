@@ -40,10 +40,11 @@ describe('Md links', () => {
       done();
     });
   });
-  it('Debería retornar una promesa en caso de ser true', () => {
+  it('Debería retornar una promesa en caso de ser true', (done) => {
     expect.assertions(1);
     return mdLin.mdLinks(path.join(process.cwd(), 'src', 'prueba', 'first.md'), { validate: false }).then((response) => {
       expect(response).toEqual(outputTwo);
+      done();
     });
   });
 });

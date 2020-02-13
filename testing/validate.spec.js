@@ -9,8 +9,8 @@ const output = [
   },
   {
     href: 'https://developer.mozlla.org/es/', path: path.join(process.cwd(), 'src', 'prueba', 'first.md'), status: 404, statusText: 'fail', text: '2',
-  }];
-
+  },
+];
 describe('Validate link', () => {
   fetchMock
     .mock('https://nodejs.org/api/process.html#process_process_cwd', 200)

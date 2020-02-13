@@ -16,11 +16,6 @@ const linksCorect = (route) => {
         link.statusText = 'fail';
       }
       return link;
-    })
-    .catch(() => {
-      link.status = '';
-      link.statusText = 'este link no existe';
-      return link;
     }));
   return Promise.all(arrayPromises);
 };

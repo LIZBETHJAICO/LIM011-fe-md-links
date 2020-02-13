@@ -24,3 +24,5 @@ const fsMdlinks = (path, options) => {
 module.exports = {
   fsMdlinks,
 };
+// eslint-disable-next-line max-len
+// fsMdlinks('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/red.md', '--s').then((res) => console.log(res));
