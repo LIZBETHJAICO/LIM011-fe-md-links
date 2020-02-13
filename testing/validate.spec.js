@@ -2,7 +2,7 @@ const path = require('path');
 const fetchMock = require('../__mocks__/node-fetch');
 const validate = require('../src/utils/validate.js');
 
-const route = '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/first.md';
+// const route = '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/first.md';
 const output = [
   {
     href: 'https://nodejs.org/api/process.html#process_process_cwd', path: path.join(process.cwd(), 'src', 'prueba', 'first.md'), status: 200, statusText: 'OK', text: '1',
@@ -20,7 +20,8 @@ describe('Validate link', () => {
     done();
   });
   it('Deberia retornar la promesa con href, path,text,  status, statustext ', (done) => {
-    validate.linksCorect(route)
+    expect.assertions(1);
+    return validate.linksCorect(path.join(process.cwd(), 'src', 'prueba', 'first.md'))
       .then((response) => {
         expect(response).toEqual(output);
         done();

@@ -38,7 +38,7 @@ const getPathArray = (pathInput) => {
   const arrMds = evaluateFilesMd(readDirectoryRecursive(pathAbsolute));
   return arrMds;
 };
-console.log(getPathArray('../LIM011-fe-md-links/src/prueba/red.md'));
+// console.log(getPathArray('../LIM011-fe-md-links/src/prueba/red.md'));
 
 const markdownLinkExtractor = (markdown) => {
   const arrayAllgetPAthArray = getPathArray(markdown);
@@ -69,7 +69,8 @@ const markdownLinkExtractor = (markdown) => {
 
 
 module.exports = {
-
-  markdownLinkExtractor,
+  readDirectoryRecursive,
+  evaluateFilesMd,
   getPathArray,
+  markdownLinkExtractor,
 };

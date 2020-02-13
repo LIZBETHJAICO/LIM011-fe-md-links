@@ -17,6 +17,7 @@
     },
     "rules": {
         "linebreak-style": 0 ,  
-        "slint-disable-next-line no-param-reassign" :0,
+        "slint-disable-next-line no-param-reassign" :0
+        
      }
 }

@@ -58,6 +58,9 @@ const printStatsValidate = (array) => {
 
 
 module.exports = {
+  statsTotal,
+  statsUnique,
+  statsBroken,
   printStats,
   printStatsValidate,
 };
