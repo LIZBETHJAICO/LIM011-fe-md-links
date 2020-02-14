@@ -1,30 +1,3 @@
-/* eslint-disable max-len */
-
-const prueba = [{
-  href: 'https://es.wikipedia.org/wiki/Markdown',
-  text: 'Markdown',
-  path:
- '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/Example/probando.md',
-  status: 200,
-  textStatus: 'OK',
-},
-{
-  href: 'https://nodejs.org/',
-  text: 'Node.js',
-  path:
- '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/Example/probando.md',
-  status: 200,
-  textStatus: 'OK',
-},
-{
-  href: 'https://nodejs.org/',
-  text: 'Node.js',
-  path:
- '/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/Example/probando.md',
-  status: 200,
-  textStatus: 'OK',
-},
-];
 
 const statsTotal = (array) => array.length;
 
@@ -33,26 +6,28 @@ const statsBroken = (array) => array.filter((link) => link.status === '' || link
 
 
 const printStats = (array) => {
-  const total = (`Total: ${statsTotal(array)} \n Unique: ${statsUnique(array)} \n Broken: ${statsBroken(array)}`);
+  const total = (`Total: ${statsTotal(array)} \n Unique: ${statsUnique(array)} \n `);
   return total;
 };
 
 const printStatsValidate = (array) => {
-  const total = (`Total: ${statsTotal(array)} \n Unique: ${statsUnique(array)} \n `);
+  const total = (`Total: ${statsTotal(array)} \n Unique: ${statsUnique(array)} \n Broken: ${statsBroken(array)}`);
   return total;
 };
-// console.log(printStats(prueba));
+
+// console.log(printStatsValidate(prueba));
 // console.log(printStatsValidate(prueba));
 
 
 // const statsTotal = (array) => array.length;
 
-(statsTotal(prueba));
+// (statsTotal(prueba));
 
 // const statsUnique = (array) => [...new Set(array.map((link) => link.href))].length;
 
 // console.log(statsUnique(prueba));
 // Cuantos link caidos
+// eslint-disable-next-line max-len
 // const statsBroken = (array) => array.filter((link) => link.status === '' || link.textStatus === 'Fail').length;
 // console.log(statsBroken(prueba));
 

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.09% </span>
+                <span class="strong">19.05% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/22</span>
+                <span class='fraction'>4/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.67% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/18</span>
+                <span class='fraction'>0/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">21.05% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/20</span>
+                <span class='fraction'>4/19</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -82,22 +82,17 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -107,26 +102,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const mdlink = require('./md-link.js');
 const stats = require('./utils/stats.js');
 &nbsp;
 &nbsp;
-const fsMdlinks = (path, options) =&gt; {
-  let resultado = '';
-  if (path === undefined) {
-    resultado = new Promise((resolve) =&gt; resolve('ingrese una ruta relativa o absoluta'));
-  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (options.validate === undefined) {
-    console.log(options.validate);
-    resultado = mdlink.mdLinks(path, { validate: false })
-      .then((res) =&gt; mdlink.printValidateFalse(res));
+const cliMdlink = <span class="fstat-no" title="function not covered" >(p</span>ath, options) =&gt; {
+  let resultado = <span class="cstat-no" title="statement not covered" >'';</span>
+<span class="cstat-no" title="statement not covered" >  if (path === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >    resultado = new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve) =&gt; <span class="cstat-no" title="statement not covered" >resolve('ingrese una ruta relativa o absoluta'))</span>;</span>
+  } else <span class="cstat-no" title="statement not covered" >if (options.validate === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >    resultado = mdlink.mdLinks(path, { validate: false })</span>
+      .then(<span class="fstat-no" title="function not covered" >(r</span>es) =&gt; <span class="cstat-no" title="statement not covered" >mdlink.printValidateFalse(res))</span>;
   } else <span class="cstat-no" title="statement not covered" >if ((options.validate === '--validate' &amp;&amp; options.stats === '--stats') || (options.validate === '--v' &amp;&amp; options.stats === '--s')) {</span>
 <span class="cstat-no" title="statement not covered" >    resultado = mdlink.mdLinks(path, { validate: true })</span>
       .then(<span class="fstat-no" title="function not covered" >(r</span>es) =&gt; <span class="cstat-no" title="statement not covered" >stats.printStatsValidate(res))</span>;
@@ -136,14 +127,11 @@ const fsMdlinks = (path, options) =&gt; {
   } else <span class="cstat-no" title="statement not covered" >if (options.validate === '--stats' || (options.validate === '--s')) {</span>
 <span class="cstat-no" title="statement not covered" >    resultado = mdlink.mdLinks(path, { validate: true }).then(<span class="fstat-no" title="function not covered" >(r</span>es) =&gt; <span class="cstat-no" title="statement not covered" >stats.printStats(res))</span>;</span>
   }
-  return resultado;
+<span class="cstat-no" title="statement not covered" >  return resultado;</span>
 };
-&nbsp;
 module.exports = {
-  fsMdlinks,
+  cliMdlink,
 };
-// eslint-disable-next-line max-len
-// fsMdlinks('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/red.md', '--s').then((res) =&gt; console.log(res));
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -151,7 +139,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Feb 13 2020 16:31:11 GMT-0500 (Peru Standard Time)
+                at Fri Feb 14 2020 04:23:51 GMT-0500 (Peru Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

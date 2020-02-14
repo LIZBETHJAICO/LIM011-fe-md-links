@@ -65,17 +65,6 @@ describe('FUNCION PRINT STATS', () => {
     expect(typeof route.printStats).toBe('function');
     done();
   });
-  it('Debería retornar la cantidad de links caidos', (done) => {
-    expect(route.statsBroken(inputstats)).toBe(0);
-    done();
-  });
-});
-
-describe('FUNCION PRINT STATS', () => {
-  it('Deveria retonar una funcion', (done) => {
-    expect(typeof route.printStats).toBe('function');
-    done();
-  });
   it('Debería retornar la cantidad de links total y unicos en string', (done) => {
     expect(route.printStats(inputstats)).toMatch('');
     done();

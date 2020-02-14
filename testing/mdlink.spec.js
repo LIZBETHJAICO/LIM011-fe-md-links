@@ -5,26 +5,38 @@ const fetchMock = require('../__mocks__/node-fetch.js');
 fetchMock.config.sendAsJson = false;
 jest.mock('node-fetch');
 fetchMock
-  .mock('https://nodejs.org/api/process.html#process_process_cwd', 200)
-  .mock('https://developer.mozlla.org/es/', 404);
+  .mock('https://www.laboratoria.la/', 200)
+  .mock('https://developer.mozlla.org/es/', () => {
+    throw new Error('ERROR_MESSAGE');
+  })
+  .mock('https://slack.com/intl/es-pe/_reset', 404);
 
 const outputOne = [
   {
-    href: 'https://nodejs.org/api/process.html#process_process_cwd', path: path.join(process.cwd(), 'src', 'prueba', 'first.md'), status: 200, statusText: 'OK', text: '1',
+    href: 'https://www.laboratoria.la/', path: path.join(process.cwd(), 'src', 'prueba', 'first.md'), status: 200, statusText: 'OK', text: '1',
   },
   {
-    href: 'https://developer.mozlla.org/es/', path: path.join(process.cwd(), 'src', 'prueba', 'first.md'), status: 404, statusText: 'fail', text: '2',
-  }];
+    href: 'https://developer.mozlla.org/es/', path: path.join(process.cwd(), 'src', 'prueba', 'first.md'), status: '', statusText: 'ESTE LINK NO EXISTE', text: '2',
+  },
+  {
+    href: 'https://slack.com/intl/es-pe/_reset', path: path.join(process.cwd(), 'src', 'prueba', 'first.md'), status: 404, statusText: 'FAIL', text: '3',
+  },
+];
 
 const outputTwo = [
   {
-    href: 'https://nodejs.org/api/process.html#process_process_cwd',
+    href: 'https://www.laboratoria.la/',
     text: '1',
     path: path.join(process.cwd(), 'src', 'prueba', 'first.md'),
   },
   {
     href: 'https://developer.mozlla.org/es/',
     text: '2',
+    path: path.join(process.cwd(), 'src', 'prueba', 'first.md'),
+  },
+  {
+    href: 'https://slack.com/intl/es-pe/_reset',
+    text: '3',
     path: path.join(process.cwd(), 'src', 'prueba', 'first.md'),
   },
 ];

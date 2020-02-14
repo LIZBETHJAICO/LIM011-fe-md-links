@@ -2,7 +2,7 @@ const mdlink = require('./md-link.js');
 const stats = require('./utils/stats.js');
 
 
-const fsMdlinks = (path, options) => {
+const cliMdlink = (path, options) => {
   let resultado = '';
   if (path === undefined) {
     resultado = new Promise((resolve) => resolve('ingrese una ruta relativa o absoluta'));
@@ -20,9 +20,6 @@ const fsMdlinks = (path, options) => {
   }
   return resultado;
 };
-
 module.exports = {
-  fsMdlinks,
+  cliMdlink,
 };
-// eslint-disable-next-line max-len
-// fsMdlinks('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/red.md', '--s').then((res) => console.log(res));

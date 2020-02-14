@@ -15,7 +15,8 @@ const mdLinks = (path, options) => new Promise((resolve) => {
 
 
 // const print
-// (mdLinks('../LIM011-fe-md-links/src/prueba', true)).then((res) => console.log(res));
+// eslint-disable-next-line max-len
+// (mdLinks('../LIM011-fe-md-links/src/prueba/first.md', { validate: false })).then((res) => console.log(res));
 // console.log((mdLinks('../LIM011-fe-md-links/src/prueba',true)));
 
 /*

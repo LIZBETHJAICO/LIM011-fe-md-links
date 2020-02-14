@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "eslint": "eslint --ext .js src/ testing/ ",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "eco": "echo test"
   },
   "bin": {
     "md-link": "src/cli.js"

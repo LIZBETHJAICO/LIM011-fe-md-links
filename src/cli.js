@@ -9,4 +9,4 @@ const options = {
   stats: process.argv[4],
 };
 
-mds.fsMdlinks(path, options).then((res) => console.log(res));
+mds.cliMdlink(path, options).then((res) => console.log(res));
