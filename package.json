@@ -30,6 +30,7 @@
   "dependencies": {
     "fetch-mock": "^9.0.0-beta.2",
     "marked": "^0.8.0",
+    "node-emoji": "^1.10.0",
     "node-fetch": "^2.6.0"
   }
 }

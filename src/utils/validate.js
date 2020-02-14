@@ -25,16 +25,7 @@ const linksCorect = (route) => {
   return Promise.all(arrayPromises);
 };
 
-// eslint-disable-next-line max-len
-// (linksCorect('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/first.md')).then((res) => console.log(res));
-// eslint-disable-next-line max-len
-/* linksCorect('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/red.md').then(links => {
- => [{ href, text, file }]
-console.log(links);
- });
-*/
+
 module.exports = {
   linksCorect,
 };
-
-// console.log(linksCorect('/home/lizbeth/Documents/LAB-11/LIM011-fe-md-links/src/prueba/red.md'));
