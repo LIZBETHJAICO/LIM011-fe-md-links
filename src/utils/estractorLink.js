@@ -2,7 +2,6 @@ const Marked = require('marked');
 const path = require('path');
 const fs = require('fs');
 
-
 const readDirectoryRecursive = (route) => {
   let filePathsArray = [];
 
